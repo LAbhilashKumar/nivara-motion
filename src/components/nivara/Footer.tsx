@@ -200,4 +200,4 @@ export function Footer() {
   );
 }
 
-src/components/nivara/Footer.tsxsrc/components/nivara/Footer.tsx
+// src/components/nivara/Footer.tsxsrc/components/nivara/Footer.tsx
