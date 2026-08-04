@@ -194,6 +194,7 @@
   --color-muted-foreground-subtle: var(--muted-foreground-subtle);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-brand-navy: var(--brand-navy);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
@@ -209,23 +210,28 @@
 
 :root {
   --radius: 1.5rem;
-  --background: oklch(0.177 0.013 264.1);
-  --background-deep: oklch(0.159 0.016 266.6);
-  --foreground: oklch(0.924 0.006 255.5);
-  --card: oklch(0.220 0.016 256.8);
-  --card-elevated: oklch(0.250 0.019 258.4);
-  --card-foreground: oklch(0.924 0.006 255.5);
-  --popover: oklch(0.196 0.015 266.8);
-  --popover-foreground: oklch(0.924 0.006 255.5);
+  /* Background family: near-black blended with brand navy hue (from logo #012A56) */
+  --background: oklch(0.175 0.017 254.3);
+  --background-deep: oklch(0.145 0.012 254.3);
+  --foreground: oklch(0.940 0.006 260.7);
+  --card: oklch(0.215 0.022 254.3);
+  --card-elevated: oklch(0.250 0.026 254.3);
+  --card-foreground: oklch(0.940 0.006 260.7);
+  --popover: oklch(0.190 0.019 254.3);
+  --popover-foreground: oklch(0.940 0.006 260.7);
   --primary: oklch(0.585 0.208 24.5);
   --primary-foreground: oklch(0.98 0.005 24);
-  --secondary: oklch(0.250 0.019 258.4);
-  --secondary-foreground: oklch(0.924 0.006 255.5);
-  --muted: oklch(0.250 0.019 258.4);
-  --muted-foreground: oklch(0.715 0.023 256.8);
-  --muted-foreground-subtle: oklch(0.562 0.025 254.5);
+  --secondary: oklch(0.250 0.026 254.3);
+  --secondary-foreground: oklch(0.940 0.006 260.7);
+  --muted: oklch(0.250 0.026 254.3);
+  /* Text family: brand gray hue (from logo #717479), lightened for dark bg */
+  --muted-foreground: oklch(0.720 0.009 260.7);
+  --muted-foreground-subtle: oklch(0.560 0.009 260.7);
   --accent: oklch(0.585 0.208 24.5);
   --accent-foreground: oklch(0.98 0.005 24);
+  /* Brand navy, lightened into a bright accent so it still reads on a dark bg — for
+     the "NIVARA" wordmark / logo-adjacent highlights, matches #012A56 in hue */
+  --brand-navy: oklch(0.72 0.145 254.3);
   --destructive: oklch(0.585 0.208 24.5);
   --destructive-foreground: oklch(0.98 0.005 24);
   --border: oklch(1 0 0 / 7%);
@@ -247,7 +253,7 @@
     background-color: var(--color-background-deep);
     background-image: radial-gradient(
       ellipse 90% 55% at 50% -5%,
-      color-mix(in oklab, var(--primary) 7%, var(--background)) 0%,
+      color-mix(in oklab, var(--brand-navy) 16%, var(--background)) 0%,
       var(--background) 45%,
       var(--background-deep) 100%
     );
