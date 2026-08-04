@@ -1,4 +1,4 @@
-@import "tailwindcss" source(none);
+/* @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
 
@@ -9,7 +9,7 @@
  * All colors in oklch. Never hardcode colors in components.
  */
 
-@theme inline {
+/*@theme inline {
   --radius-sm: calc(var(--radius) - 8px);
   --radius-md: calc(var(--radius) - 4px);
   --radius-lg: var(--radius);
@@ -81,6 +81,177 @@
 
   body {
     background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 0.95;
+  }
+
+  ::selection {
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+}
+
+@utility bento-card {
+  position: relative;
+  border-radius: 1.375rem;
+  background: linear-gradient(
+    160deg,
+    var(--card-elevated) 0%,
+    var(--card) 55%,
+    var(--card) 100%
+  );
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+  transition:
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:hover {
+    border-color: var(--border-strong);
+    box-shadow: var(--shadow-lift);
+  }
+}
+
+@utility chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: oklch(1 0 0 / 3%);
+  padding: 0.3rem 0.7rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  color: var(--muted-foreground);
+  white-space: nowrap;
+}
+
+@utility accent-word {
+  color: var(--primary);
+}
+
+@utility grain-glow {
+  background: radial-gradient(
+    circle at 50% 50%,
+    color-mix(in oklab, var(--primary) 45%, transparent) 0%,
+    transparent 68%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+} */
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Nivara Technologies design system — dark bento.
+ * All colors in oklch. Never hardcode colors in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 8px);
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-background-deep: var(--background-deep);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-card-elevated: var(--card-elevated);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted-foreground-subtle: var(--muted-foreground-subtle);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-display: "Archivo", "Arial Narrow", sans-serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --shadow-card: 0 1px 0 0 oklch(1 0 0 / 4%) inset, 0 18px 40px -24px oklch(0 0 0 / 90%);
+  --shadow-lift: 0 1px 0 0 oklch(1 0 0 / 6%) inset, 0 34px 60px -28px oklch(0 0 0 / 95%);
+  --shadow-glow: 0 0 60px -12px var(--primary);
+}
+
+:root {
+  --radius: 1.5rem;
+  --background: oklch(0.177 0.013 264.1);
+  --background-deep: oklch(0.159 0.016 266.6);
+  --foreground: oklch(0.924 0.006 255.5);
+  --card: oklch(0.220 0.016 256.8);
+  --card-elevated: oklch(0.250 0.019 258.4);
+  --card-foreground: oklch(0.924 0.006 255.5);
+  --popover: oklch(0.196 0.015 266.8);
+  --popover-foreground: oklch(0.924 0.006 255.5);
+  --primary: oklch(0.585 0.208 24.5);
+  --primary-foreground: oklch(0.98 0.005 24);
+  --secondary: oklch(0.250 0.019 258.4);
+  --secondary-foreground: oklch(0.924 0.006 255.5);
+  --muted: oklch(0.250 0.019 258.4);
+  --muted-foreground: oklch(0.715 0.023 256.8);
+  --muted-foreground-subtle: oklch(0.562 0.025 254.5);
+  --accent: oklch(0.585 0.208 24.5);
+  --accent-foreground: oklch(0.98 0.005 24);
+  --destructive: oklch(0.585 0.208 24.5);
+  --destructive-foreground: oklch(0.98 0.005 24);
+  --border: oklch(1 0 0 / 7%);
+  --border-strong: oklch(1 0 0 / 14%);
+  --input: oklch(1 0 0 / 10%);
+  --ring: oklch(0.585 0.208 24.5);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: var(--color-background-deep);
+    background-image: radial-gradient(
+      ellipse 90% 55% at 50% -5%,
+      color-mix(in oklab, var(--primary) 7%, var(--background)) 0%,
+      var(--background) 45%,
+      var(--background-deep) 100%
+    );
+    background-attachment: fixed;
     color: var(--color-foreground);
     font-family: var(--font-sans);
     overflow-x: hidden;
