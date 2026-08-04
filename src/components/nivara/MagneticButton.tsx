@@ -49,8 +49,8 @@ export function MagneticButton({
   return (
     <motion.button
       type={type}
-      aria-label={ariaLabel}
-      onClick={onClick}
+      {...(ariaLabel ? { "aria-label": ariaLabel } : {})}
+      {...(onClick ? { onClick } : {})}
       onMouseMove={handleMove}
       onMouseLeave={() => {
         mx.set(0);
