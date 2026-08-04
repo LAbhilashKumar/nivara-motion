@@ -1,24 +1,59 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { SmoothScroll } from "@/components/nivara/SmoothScroll";
+import { Navbar } from "@/components/nivara/Navbar";
+import { Hero } from "@/components/nivara/Hero";
+import { Services } from "@/components/nivara/Services";
+import { StackRow } from "@/components/nivara/StackRow";
+import { Process } from "@/components/nivara/Process";
+import { Testimonials } from "@/components/nivara/Testimonials";
+import { FloatingContact } from "@/components/nivara/FloatingContact";
+import { InquiryModal } from "@/components/nivara/InquiryModal";
+import { Footer } from "@/components/nivara/Footer";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "Nivara Technologies — Premium Websites & Web Apps";
+const description =
+  "Nivara Technologies is a web development studio designing and building premium, fast, cloud-native websites and web applications in React and TypeScript.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <SmoothScroll />
+      <Navbar onInquire={() => setOpen(true)} />
+      <main>
+        <Hero onInquire={() => setOpen(true)} />
+        <Services />
+        <StackRow />
+        <Process />
+        <Testimonials />
+        <section id="inquire" className="mx-auto w-full max-w-6xl px-4 pb-28 text-center">
+          <h2 className="mx-auto max-w-2xl text-[clamp(1.9rem,5vw,3.25rem)]">
+            Ready to build something <span className="accent-word">worth shipping?</span>
+          </h2>
+          <p className="mx-auto mt-4 max-w-lg text-sm text-muted-foreground">
+            Tell us about the project — we&apos;ll come back with a plan, a timeline and a price.
+          </p>
+        </section>
+      </main>
+      <Footer />
+      <FloatingContact onClick={() => setOpen(true)} />
+      <InquiryModal open={open} onClose={() => setOpen(false)} />
+    </>
   );
 }
