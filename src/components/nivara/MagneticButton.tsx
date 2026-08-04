@@ -57,7 +57,7 @@ export function MagneticButton({
         my.set(0);
       }}
       style={{ x, y }}
-      whileTap={reduced ? undefined : { scale: 0.97 }}
+      whileTap={reduced ? {} : { scale: 0.97 }}
       className={cn(
         "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-tight transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         styles[variant],

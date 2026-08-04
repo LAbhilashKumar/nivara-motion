@@ -43,12 +43,12 @@ export function TiltCard({ children, className, max = 6 }: TiltCardProps) {
       }}
       onMouseMove={handleMove}
       onMouseLeave={reset}
-      whileHover={reduced ? undefined : { y: -6 }}
+      whileHover={reduced ? {} : { y: -6 }}
       transition={{ type: "spring", stiffness: 260, damping: 22 }}
       style={
         interactive
           ? { rotateX, rotateY, transformPerspective: 1000, transformStyle: "preserve-3d" }
-          : undefined
+          : {}
       }
       className={cn("bento-card p-6", className)}
     >
