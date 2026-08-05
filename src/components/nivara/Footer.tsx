@@ -261,18 +261,18 @@ export function Footer() {
           </ul>
         </nav>
         <ul className="flex flex-wrap gap-5 text-sm text-muted-foreground">
-          {socials.map((s) => (
-            <li key={s.label}>
-              
-                href={s.href}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="transition-colors hover:text-foreground"
-              >
-                {s.label}
-              </a>
-            </li>
-          ))}
+         {socials.map((s) => (
+  <li key={s.label}>
+    
+      href={s.href}
+      target="_blank"
+      rel="noreferrer noopener"
+      className="transition-colors hover:text-foreground"
+    >
+      {s.label}
+    </a>
+  </li>
+))}
         </ul>
         <ul className="flex flex-wrap gap-5 text-sm text-muted-foreground">
           {contact.map((c) => (
