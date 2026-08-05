@@ -353,6 +353,12 @@ import { TiltCard, bentoStagger } from "./TiltCard";
 import { SectionHeading } from "./SectionHeading";
 
 const rotating = [
+    {
+    icon: Sparkles,
+    title: "Product",
+    copy: "Interface systems, motion language and brand expression built to hold up across every screen.",
+    tags: ["Design systems", "Motion", "Prototyping"],
+  },
   {
     icon: Code2,
     title: "Web Applications",
