@@ -44,6 +44,64 @@
 
 
 
+// import { motion } from "framer-motion";
+// import { Quote } from "lucide-react";
+// import { TiltCard, bentoStagger } from "./TiltCard";
+// import { SectionHeading } from "./SectionHeading";
+
+// export function Testimonials() {
+//   return (
+//     <section className="mx-auto w-full max-w-6xl px-4 pb-24">
+//       <SectionHeading eyebrow="Testimonials">
+//         Hear what our <span className="accent-word">clients</span> have to say
+//       </SectionHeading>
+
+//       <motion.div
+//         variants={bentoStagger}
+//         initial="hidden"
+//         whileInView="show"
+//         viewport={{ once: true, margin: "-80px" }}
+//         className="grid grid-cols-1 gap-4 md:grid-cols-3"
+//       >
+//         {/* Featured Testimonial */}
+//         <TiltCard className="flex flex-col justify-between md:col-span-2" max={4}>
+//           <Quote className="h-8 w-8 text-primary" aria-hidden="true" />
+
+//           <blockquote className="mt-6 text-[clamp(1.15rem,2.4vw,1.6rem)] leading-snug text-foreground">
+//             &ldquo;Nivara Technologies understood our vision and delivered a clean,
+//             professional website that perfectly represents our brand. The entire
+//             process was smooth, and the team exceeded our expectations.&rdquo;
+//           </blockquote>
+
+//           <footer className="mt-8 flex items-center gap-3">
+//             <span className="h-9 w-9 rounded-full border border-border-strong bg-card-elevated" />
+//             <span className="text-sm font-medium text-muted-foreground">
+//               — Gripsta Team
+//             </span>
+//           </footer>
+//         </TiltCard>
+
+//         {/* Company Values */}
+//         <TiltCard className="flex flex-col justify-center">
+//           <h3 className="text-lg font-semibold text-foreground">
+//             Built with Trust
+//           </h3>
+
+//           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+//             Every project is delivered with a focus on quality, transparency,
+//             and long-term client relationships.
+//           </p>
+
+//           <span className="chip mt-5 w-fit">
+//             Client Satisfaction
+//           </span>
+//         </TiltCard>
+//       </motion.div>
+//     </section>
+//   );
+// }
+
+
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 import { TiltCard, bentoStagger } from "./TiltCard";
@@ -53,7 +111,7 @@ export function Testimonials() {
   return (
     <section className="mx-auto w-full max-w-6xl px-4 pb-24">
       <SectionHeading eyebrow="Testimonials">
-        Hear what our <span className="accent-word">clients</span> have to say
+        Hear what our <span className="accent-word">client</span> has to say
       </SectionHeading>
 
       <motion.div
@@ -65,31 +123,46 @@ export function Testimonials() {
       >
         {/* Featured Testimonial */}
         <TiltCard className="flex flex-col justify-between md:col-span-2" max={4}>
-          <Quote className="h-8 w-8 text-primary" aria-hidden="true" />
+          <Quote
+            className="h-8 w-8 text-primary"
+            aria-hidden="true"
+          />
 
           <blockquote className="mt-6 text-[clamp(1.15rem,2.4vw,1.6rem)] leading-snug text-foreground">
-            &ldquo;Nivara Technologies understood our vision and delivered a clean,
-            professional website that perfectly represents our brand. The entire
-            process was smooth, and the team exceeded our expectations.&rdquo;
+            &ldquo;Nivara Technologies understood our vision and delivered a
+            clean, professional website that perfectly represents our brand.
+            The entire process was smooth, and the team exceeded our
+            expectations.&rdquo;
           </blockquote>
 
-          <footer className="mt-8 flex items-center gap-3">
-            <span className="h-9 w-9 rounded-full border border-border-strong bg-card-elevated" />
-            <span className="text-sm font-medium text-muted-foreground">
-              — Gripsta Team
-            </span>
+          <footer className="mt-8 flex items-center gap-4">
+            <img
+              src="/gripsta-logo.jpg"
+              alt="Gripsta Logo"
+              className="h-12 w-12 rounded-lg object-contain border border-border bg-white p-1"
+            />
+
+            <div>
+              <h4 className="text-sm font-semibold text-foreground">
+                Gripsta Team
+              </h4>
+
+              <p className="text-xs text-muted-foreground">
+                Client
+              </p>
+            </div>
           </footer>
         </TiltCard>
 
-        {/* Company Values */}
+        {/* Side Card */}
         <TiltCard className="flex flex-col justify-center">
           <h3 className="text-lg font-semibold text-foreground">
-            Built with Trust
+            Trusted Partnership
           </h3>
 
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-            Every project is delivered with a focus on quality, transparency,
-            and long-term client relationships.
+            We believe every successful project is built on trust,
+            communication, and delivering beyond expectations.
           </p>
 
           <span className="chip mt-5 w-fit">
