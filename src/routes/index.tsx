@@ -125,19 +125,27 @@ function Index() {
             <TiltCard className="flex flex-col justify-center gap-5">
               <div>
                 <span className="chip w-fit">Email</span>
-                <a href="mailto:nivaratechnologies@gmail.com" className="mt-2 block text-sm text-foreground hover:text-primary">
+                
+                  href="mailto:nivaratechnologies@gmail.com"
+                  className="mt-2 block text-sm text-foreground hover:text-primary"
+                >
                   nivaratechnologies@gmail.com
                 </a>
               </div>
               <div>
                 <span className="chip w-fit">Phone</span>
-                <a href="tel:+919493667272" className="mt-2 block text-sm text-foreground hover:text-primary">
+                
+                  href="tel:+919493667272"
+                  className="mt-2 block text-sm text-foreground hover:text-primary"
+                >
                   +91 94936 67272
                 </a>
               </div>
               <div>
                 <span className="chip w-fit">Response time</span>
-                <p className="mt-2 text-sm text-muted-foreground">Within 1 business day</p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Within 1 business day
+                </p>
               </div>
             </TiltCard>
           </div>
@@ -149,3 +157,9 @@ function Index() {
     </>
   );
 }
+
+
+
+
+
+      
