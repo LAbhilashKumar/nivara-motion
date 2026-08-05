@@ -20,8 +20,8 @@ export function Testimonials() {
         <TiltCard className="flex flex-col justify-between md:col-span-2" max={4}>
           <Quote className="h-8 w-8 text-primary" aria-hidden="true" />
           <blockquote className="mt-6 text-[clamp(1.15rem,2.4vw,1.6rem)] leading-snug text-foreground">
-            &ldquo;[REPLACE WITH REAL REVIEW] Placeholder quote about how the build went,
-            what shipped, and the outcome it produced.&rdquo;
+            &ldquo;Nivara Technologies turned our ideas into a clean and professional website. The team was responsive, easy to work with,
+            and delivered exactly what we needed.— Gripsta Team.&rdquo;
           </blockquote>
           <footer className="mt-8 flex items-center gap-3">
             <span className="h-9 w-9 rounded-full border border-border-strong bg-card-elevated" />
