@@ -21,12 +21,12 @@ export function Testimonials() {
           <Quote className="h-8 w-8 text-primary" aria-hidden="true" />
           <blockquote className="mt-6 text-[clamp(1.15rem,2.4vw,1.6rem)] leading-snug text-foreground">
             &ldquo;Nivara Technologies turned our ideas into a clean and professional website. The team was responsive, easy to work with,
-            and delivered exactly what we needed.— Gripsta Team.&rdquo;
+            and delivered exactly what we needed".&rdquo;
           </blockquote>
           <footer className="mt-8 flex items-center gap-3">
             <span className="h-9 w-9 rounded-full border border-border-strong bg-card-elevated" />
             <span className="text-sm text-muted-foreground">
-              [Client name] · [Company]
+              [— Gripsta Team]
             </span>
           </footer>
         </TiltCard>
