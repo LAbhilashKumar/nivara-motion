@@ -281,7 +281,7 @@ const links = [
   { label: "Inquire", href: "#inquire" },
 ];
 
-const SHRINK_DISTANCE = 220; // px scrolled before nav reaches compact size
+const SHRINK_DISTANCE = 220;
 
 export function Navbar({ onInquire }: { onInquire: () => void }) {
   const [scrolled, setScrolled] = useState(false);
@@ -304,52 +304,25 @@ export function Navbar({ onInquire }: { onInquire: () => void }) {
       initial={{ y: -28, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.35, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-      style={{
-        maxWidth,
-        marginTop,
-        paddingLeft: paddingX,
-        paddingRight: paddingX,
-        borderRadius: radius,
-      }}
-      className={`fixed inset-x-0 top-0 z-50 mx-auto flex items-center gap-3 border py-2 transition-colors duration-500 ${
-        scrolled
-          ? "border-border-strong bg-[oklch(0.145_0.012_254.3_/_82%)] backdrop-blur-xl"
-          : "border-transparent bg-[oklch(0.215_0.022_254.3_/_50%)] backdrop-blur-md"
-      }`}
+      style={{ maxWidth, marginTop, paddingLeft: paddingX, paddingRight: paddingX, borderRadius: radius }}
+      className={`fixed inset-x-0 top-0 z-50 mx-auto flex items-center gap-3 border py-2 transition-colors duration-500 ${scrolled ? "border-border-strong bg-[oklch(0.145_0.012_254.3_/_82%)] backdrop-blur-xl" : "border-transparent bg-[oklch(0.215_0.022_254.3_/_50%)] backdrop-blur-md"}`}
     >
       <a href="#top" className="ml-1 flex shrink-0 items-center gap-2">
-        <img
-          src="/nivara-logo.png"
-          alt="Nivara Technologies"
-          className="h-8 w-8 shrink-0"
-          width={32}
-          height={32}
-        />
+        <img src="/nivara-logo.png" alt="Nivara Technologies" className="h-8 w-8 shrink-0" width={32} height={32} />
         <span className="font-display text-lg font-extrabold tracking-[-0.06em]">
-          <span className="text-brand-navy">NIVARA</span>{" "}
-          <span className="hidden text-white sm:inline">Technologies</span>
+          <span className="text-brand-navy">NIVARA</span> <span className="hidden text-white sm:inline">Technologies</span>
         </span>
       </a>
       <ul className="ml-auto hidden items-center gap-1 sm:flex">
         {links.map((l) => (
           <li key={l.label}>
-            
-              href={l.href}
-              className="rounded-full px-4 py-2 text-sm text-muted-foreground transition-colors hover:bg-[oklch(1_0_0_/_5%)] hover:text-foreground"
-            >
-              {l.label}
-            </a>
+            <a href={l.href} className="rounded-full px-4 py-2 text-sm text-muted-foreground transition-colors hover:bg-[oklch(1_0_0_/_5%)] hover:text-foreground">{l.label}</a>
           </li>
         ))}
       </ul>
-      <MagneticButton
-        onClick={onInquire}
-        className="ml-auto px-5 py-2 text-xs sm:ml-2"
-        radius={6}
-      >
+      <MagneticButton onClick={onInquire} className="ml-auto px-5 py-2 text-xs sm:ml-2" radius={6}>
         Let&apos;s Talk
       </MagneticButton>
     </motion.header>
   );
 }
-
