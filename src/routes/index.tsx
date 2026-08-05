@@ -65,7 +65,7 @@ function Index() {
             </TiltCard>
             <TiltCard className="flex flex-col justify-center gap-5">
               <div>
-                <span className="chip w-fit">Email</span>
+               <span className="chip w-fit">Email</span>
                 
                   href="mailto:nivaratechnologies@gmail.com"
                   className="mt-2 block text-sm text-foreground hover:text-primary"
@@ -74,7 +74,7 @@ function Index() {
                 </a>
               </div>
               <div>
-                <span className="chip w-fit">Phone</span>
+                  <span className="chip w-fit">Phone</span>
                 
                   href="tel:+919493667272"
                   className="mt-2 block text-sm text-foreground hover:text-primary"
