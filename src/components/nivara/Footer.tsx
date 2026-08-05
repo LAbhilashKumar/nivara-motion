@@ -202,9 +202,6 @@
 
 // // // src/components/nivara/Footer.tsxsrc/components/nivara/Footer.tsx
 
-
-
-
 import { motion } from "framer-motion";
 
 const links = [
